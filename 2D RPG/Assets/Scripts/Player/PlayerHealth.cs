@@ -3,9 +3,15 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour, IDamagable
 {
-    [Header("Config")]
-    [SerializeField] private PlayerStats stats;
+    private Player player;
+    private PlayerAnimations playerAnimations;
 
+    private void Awake()
+    {
+        player = GetComponent<Player>();
+        playerAnimations = GetComponent<PlayerAnimations>();
+    }
+    
     private void Update()
     {
         if(Input.GetKeyDown(KeyCode.Space)) TakeDamage(1f);
@@ -13,12 +19,13 @@ public class PlayerHealth : MonoBehaviour, IDamagable
 
     public void TakeDamage(float amount)
     {
-        stats.Health -= amount;
-        if(stats.Health <= 0) PlayerDeath();
+        player.Stats.Health -= amount;
+        if(player.Stats.Health <= 0) 
+            PlayerDeath();
     }
 
     private void PlayerDeath()
     {
-        Debug.Log("Player died");
+        playerAnimations.SetDeadAnimation();
     }
 }
