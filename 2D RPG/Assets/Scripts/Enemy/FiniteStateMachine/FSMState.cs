@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 [Serializable]
 public class FSMState
@@ -17,13 +18,14 @@ public class FSMState
     {
         for (int i = 0; i < actions.Length; i++)
         {
-            actions[i].Act();
+                actions[i]?.Act();
         }
     }
 
     private void ExecuteTransitions(EnemyBrain enemyBrain)
     {
-        if (transitions != null || transitions.Length <= 0)
+        
+        if (transitions == null || transitions.Length <= 0)
             return;
         for (int i = 0; i < transitions.Length; i++)
         {
