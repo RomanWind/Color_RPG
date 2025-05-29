@@ -20,8 +20,11 @@ public class PlayerHealth : MonoBehaviour, IDamagable
     public void TakeDamage(float amount)
     {
         player.Stats.Health -= amount;
-        if(player.Stats.Health <= 0) 
+        if (player.Stats.Health <= 0f)
+        {
+            player.Stats.Health = 0f;
             PlayerDeath();
+        }
     }
 
     private void PlayerDeath()
