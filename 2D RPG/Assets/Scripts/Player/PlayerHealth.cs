@@ -14,7 +14,7 @@ public class PlayerHealth : MonoBehaviour, IDamagable
     
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Space)) TakeDamage(1f);
+        //if(Input.GetKeyDown(KeyCode.Space)) TakeDamage(1f);
     }
 
     public void TakeDamage(float amount)
@@ -24,7 +24,9 @@ public class PlayerHealth : MonoBehaviour, IDamagable
         {
             player.Stats.Health = 0f;
             PlayerDeath();
+            return;
         }
+        DamageManager.Instance.ShowDamageText(amount, transform);
     }
 
     private void PlayerDeath()
