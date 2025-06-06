@@ -3,9 +3,13 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Config")]
+    [SerializeField] private float speed = 10f;
+
+    public Vector2 MoveDirection => moveDirection;
+    
     private Player player;
     private PlayerAnimations playerAnimations;
-    private float speed = 10f;
     private PlayerActions actions;
     private Rigidbody2D rb2D;
     private Vector2 moveDirection;

@@ -11,11 +11,6 @@ public class PlayerHealth : MonoBehaviour, IDamagable
         player = GetComponent<Player>();
         playerAnimations = GetComponent<PlayerAnimations>();
     }
-    
-    private void Update()
-    {
-        //if(Input.GetKeyDown(KeyCode.Space)) TakeDamage(1f);
-    }
 
     public void TakeDamage(float amount)
     {

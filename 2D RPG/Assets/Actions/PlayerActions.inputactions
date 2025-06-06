@@ -72,6 +72,34 @@
                     "isPartOfComposite": true
                 }
             ]
+        },
+        {
+            "name": "Attack",
+            "id": "e6bdcf4e-1041-4c92-a4ca-a9426cd6fb89",
+            "actions": [
+                {
+                    "name": "ClickAttack",
+                    "type": "Button",
+                    "id": "f99864b2-5843-44bb-b0c9-75972660dfaa",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "85cc06e2-461d-4188-a513-6f36eeb9b2b7",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ClickAttack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
         }
     ],
     "controlSchemes": []
