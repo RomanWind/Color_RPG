@@ -109,6 +109,7 @@ GameObject:
   - component: {fileID: 466409332257435285}
   - component: {fileID: 3760009258074711396}
   - component: {fileID: 5421490629814857805}
+  - component: {fileID: 8367434088260943321}
   m_Layer: 6
   m_Name: Enemy_Spider
   m_TagString: Enemy
@@ -427,3 +428,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectorSprite: {fileID: 3096686243291225283}
+--- !u!114 &8367434088260943321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5936544122060232789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb9df21c5212614a9ae791e72601c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20

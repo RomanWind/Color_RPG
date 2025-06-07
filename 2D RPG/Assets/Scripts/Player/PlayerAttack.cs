@@ -65,6 +65,7 @@ public class PlayerAttack : MonoBehaviour
             Projectile projectile = Instantiate(initialWeapon.ProjectilePrefab, 
                 currentAttackPosition.position, rotation);
             projectile.direction = Vector3.up;
+            projectile.Damage = initialWeapon.Damage;
             playerMana.UseMana(initialWeapon.RequiredMana);
         }
         

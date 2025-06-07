@@ -25,7 +25,7 @@ public class EnemySelector : MonoBehaviour
         }
     }
 
-    private void NoSelectedCallback()
+    public void NoSelectedCallback()
     {
         selectorSprite.SetActive(false);
     }

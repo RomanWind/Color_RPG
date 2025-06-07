@@ -64795,7 +64795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77d3280e6ae21d4090d6b4a04edeb3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialWeapon: {fileID: 11400000, guid: a608efa0180293d4a8e71f850762663e, type: 2}
+  initialWeapon: {fileID: 11400000, guid: 20d06b7b382cc0646b6f59a9b006216b, type: 2}
   attackPositions:
   - {fileID: 1098714950}
   - {fileID: 1208320544}

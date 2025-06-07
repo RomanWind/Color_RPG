@@ -6,7 +6,8 @@ public class Projectile : MonoBehaviour
     [SerializeField] private float speed;
 
     public Vector3 direction;
-
+    public float Damage {get; set;}
+    
     private void Update()
     {
         transform.Translate(direction * (speed * Time.deltaTime));
@@ -14,6 +15,7 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-            Destroy(gameObject);
+        other.GetComponent<IDamagable>()?.TakeDamage(Damage);
+        Destroy(gameObject);
     }
 }

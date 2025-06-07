@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Icon: {fileID: 21300000, guid: 00d8e2162d03d6b4394bf4dabd381112, type: 3}
   WeaponType: 0
-  Damage: 1.5
+  Damage: 15
   ProjectilePrefab: {fileID: 1320260422832483551, guid: fb3fdd65dbd32ac4fa3262cb7d81f7f7, type: 3}
   RequiredMana: 1

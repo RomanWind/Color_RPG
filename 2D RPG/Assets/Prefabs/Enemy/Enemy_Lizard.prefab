@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 7912864393479358700}
   - component: {fileID: 1159721692751548701}
   - component: {fileID: 4275498760106689683}
+  - component: {fileID: 721828484106308612}
   m_Layer: 6
   m_Name: Enemy_Lizard
   m_TagString: Enemy
@@ -341,6 +342,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   selectorSprite: {fileID: 3737461232380035921}
+--- !u!114 &721828484106308612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 673835488328004322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb9df21c5212614a9ae791e72601c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 20
 --- !u!1 &3737461232380035921
 GameObject:
   m_ObjectHideFlags: 0
