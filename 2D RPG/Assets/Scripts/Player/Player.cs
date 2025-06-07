@@ -5,11 +5,14 @@ public class Player : MonoBehaviour
 {
     [Header("Config")]
     [SerializeField] private PlayerStats stats;
-    private PlayerAnimations animations;
     public PlayerStats Stats => stats;
+    public PlayerMana PlayerMana { get; set; }
+
+    private PlayerAnimations animations;
 
     private void Awake()
     {
+        PlayerMana = GetComponent<PlayerMana>();
         animations = GetComponent<PlayerAnimations>();
     }
     
@@ -17,5 +20,6 @@ public class Player : MonoBehaviour
     {
         stats.ResetPlayer();
         animations.ResetPlayer();
+        PlayerMana.ResetMana();
     }
 }

@@ -17,6 +17,9 @@ public class PlayerAttack : MonoBehaviour
     private Transform currentAttackPosition;
     private float currentAttackRotation;
 
+    private float attackCooldownTimer = 0.75f;
+    private float lastPlayerAttackTime = 0f;
+    
     private void Awake()
     {
         actions = new PlayerActions();
@@ -33,22 +36,30 @@ public class PlayerAttack : MonoBehaviour
     private void Update()
     {
         GetFirePosition();
+        lastPlayerAttackTime += Time.deltaTime;
     }
     
     private void Attack()
     {
-        if(enemyTarget == null) return;
+        if(enemyTarget == null  ||
+           !(lastPlayerAttackTime - attackCooldownTimer > 0)) 
+            return;
+        
         if (attackCoroutine != null)
         {
             StopCoroutine(attackCoroutine);
         }
         attackCoroutine = StartCoroutine(IEAttack());
+        lastPlayerAttackTime = 0;
     }
 
     private IEnumerator IEAttack()
     {
         if (currentAttackPosition != null)
         {
+            if (playerMana.CurrentMana < initialWeapon.RequiredMana)
+                yield break;
+            
             Quaternion rotation = 
                 Quaternion.Euler(new Vector3(0f, 0f, currentAttackRotation));
             Projectile projectile = Instantiate(initialWeapon.ProjectilePrefab, 
