@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     [Header("Config")] 
+    [SerializeField] private PlayerStats stats;
     [SerializeField] private Weapon initialWeapon;
     [SerializeField] private Transform[] attackPositions;
     [Header("Melee Config")] 
@@ -76,7 +77,7 @@ public class PlayerAttack : MonoBehaviour
         Projectile projectile = Instantiate(CurrentWeapon.ProjectilePrefab, 
             currentAttackPosition.position, rotation);
         projectile.direction = Vector3.up;
-        projectile.Damage = CurrentWeapon.Damage;
+        projectile.Damage = GetAttackDamage();
         playerMana.UseMana(CurrentWeapon.RequiredMana);
     }
 
@@ -87,9 +88,20 @@ public class PlayerAttack : MonoBehaviour
         float currentDistanceToEnemy = 
             Vector3.Distance(enemyTarget.transform.position, transform.position);
         if (currentDistanceToEnemy <= minDistanceMeleeAttack)
-            enemyTarget.GetComponent<IDamagable>().TakeDamage(1f);
+            enemyTarget.GetComponent<IDamagable>().TakeDamage(GetAttackDamage());
     }
 
+    private float GetAttackDamage()
+    {
+        float damage = stats.BaseDamage;
+        damage += CurrentWeapon.Damage;
+        float randomPerc = UnityEngine.Random.Range(0f, 100f);
+        if (randomPerc <= stats.CriticalChance)
+            damage += damage * (stats.CriticalDamage/100f);
+        
+        return damage;
+    }
+    
     private void GetFirePosition()
     {
         Vector2 moveDirection = playerMovement.MoveDirection;

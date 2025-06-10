@@ -58945,8 +58945,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1003649715}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.83000016, y: 21.35, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -59046,7 +59046,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -69690,14 +69690,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b77d3280e6ae21d4090d6b4a04edeb3d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialWeapon: {fileID: 11400000, guid: 20d06b7b382cc0646b6f59a9b006216b, type: 2}
+  stats: {fileID: 11400000, guid: b5971d430a2efc44e8f6e56d5f885c44, type: 2}
+  initialWeapon: {fileID: 11400000, guid: a608efa0180293d4a8e71f850762663e, type: 2}
   attackPositions:
   - {fileID: 1098714950}
   - {fileID: 1208320544}
   - {fileID: 1727551904}
   - {fileID: 1034793987}
-  slashFX: {fileID: 0}
-  minDistanceMeleeAttack: 0
+  slashFX: {fileID: 1003649718}
+  minDistanceMeleeAttack: 2
 --- !u!4 &1322127936 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8734272034812650180, guid: b70846fb1b5a8c24cb6fa37beb389ce7, type: 3}
