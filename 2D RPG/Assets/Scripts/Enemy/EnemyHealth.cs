@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour, IDamagable
 {
+    public static event Action OnEnemyDeadEvent;
+
     [Header("Config")]
     [SerializeField] private float health;
     
@@ -35,6 +37,7 @@ public class EnemyHealth : MonoBehaviour, IDamagable
             enemyBrain.enabled = false;
             enemySelector.NoSelectedCallback();
             gameObject.layer = LayerMask.NameToLayer("Ignore Raycast");
+            OnEnemyDeadEvent?.Invoke();
         }
         else
         {
