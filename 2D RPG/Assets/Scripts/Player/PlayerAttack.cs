@@ -33,7 +33,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Start()
     {
-        CurrentWeapon = initialWeapon;
+        EquipWeapon(initialWeapon);
         actions.Attack.ClickAttack.performed += ctx => Attack();
     }
 
@@ -91,6 +91,12 @@ public class PlayerAttack : MonoBehaviour
             enemyTarget.GetComponent<IDamagable>().TakeDamage(GetAttackDamage());
     }
 
+    public void EquipWeapon(Weapon newWeapon)
+    {
+        CurrentWeapon = newWeapon;
+        stats.TotalDamage = stats.BaseDamage + CurrentWeapon.Damage;
+    }
+    
     private float GetAttackDamage()
     {
         float damage = stats.BaseDamage;
