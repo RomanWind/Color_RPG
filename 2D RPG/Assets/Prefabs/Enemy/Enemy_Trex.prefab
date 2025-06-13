@@ -110,6 +110,7 @@ GameObject:
   - component: {fileID: 8938879639987426228}
   - component: {fileID: 5319917327676839268}
   - component: {fileID: 5040361282052095105}
+  - component: {fileID: 136997321534230545}
   m_Layer: 6
   m_Name: Enemy_Trex
   m_TagString: Enemy
@@ -441,3 +442,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+--- !u!114 &136997321534230545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7520864783843612969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00483077216d2924ebf768e6c1a7206e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  expDrop: 45
